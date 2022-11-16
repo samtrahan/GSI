@@ -36,6 +36,10 @@ case $(hostname -f) in
   discover3[1-5].prv.cube) MACHINE_ID=discover ;; ### discover31-35
 esac
 
+if [[ "$PLATFORM" == axiom ]] ; then
+    MACHINE_ID=$PLATFORM
+fi
+
 # Overwrite auto-detect with MACHINE if set
 MACHINE_ID=${MACHINE:-${MACHINE_ID}}
 
